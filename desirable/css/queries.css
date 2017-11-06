@@ -1,0 +1,103 @@
+@media screen and (max-width:1200px){
+	.device {
+  left: -12%;
+  top: -141px;
+    width: 567px;
+}
+	footer li{margin-right:10%;}
+	.feature-content{width:55%;}
+	.device-content {
+  height: 523px;
+  left: 80px;
+  position: absolute;
+  top: 226px !important;
+  width: 265px;
+}
+}
+@media screen and (max-width:991px){
+	.feature-1,.feature-2{margin-bottom:50px;}
+	.device{display:none;}
+	.screenshots ul li{width:50%;}
+	.screenshots-intro{padding:110px 0 100px 0;}
+	.feature-content{width:80%;}
+	.features-slider{height:100%}
+}
+@media screen and (max-width:850px){
+  .logotxt1 > img {
+  margin-top: -20px;
+  width: 60%;
+}
+.portfolio-sec figcaption p {
+font-size: 12px;
+}
+  }
+@media screen and (max-width:660px){
+.feature-content {
+  width: 60%;
+}
+
+}
+@media screen and (max-width:640px){
+	.use-btn{display:none;}
+	footer li{display:block;text-align:left;padding:20px 0;border-bottom:dashed 1px #c7cacc;margin-right:0!important;float:none;}
+	nav{margin-top:40px;}
+	.overlay ul{margin-left:0px;}
+	.overlay ul li a{padding:20px 0;min-width:120px;font-size:12px;}
+
+}
+@media screen and (max-width:500px){
+	.owl-item{
+		   width: 315px !important;
+		   margin: 0 auto !important;
+	}
+  .portfolio-sec figcaption p {
+font-size: 8px;
+   text-transform: none;
+}
+.portfolio-sec figcaption .caption-content {
+  left: 51%;
+  margin-left: -92px;
+  margin-top: -31px;
+  position: absolute;
+  top: 60%;
+  transform: translate(0px, 15px);
+  transition: all 300ms ease-in-out 0s;
+  width: 182px;
+}
+.portfolio-sec figcaption i {
+  font-size: 20px;
+}
+}
+@media screen and (max-width:465px){
+	.hero h1{font-size:40px;margin:100px 0 45px 0}
+	.screenshots ul li{width:100%;min-height:100%;float:none;}
+	section.video i{font-size:30px;}
+	section.video h1{font-size:15px;font-weight:400;}
+	section.video{padding:40px;}
+	.feature-content{width:100%;text-align:center;margin-top:20px;}
+	.feature-icon{display:block;margin:0 auto;}
+	blockquote p{width:60%;}
+
+}
+@media screen and (max-width:400px){
+.overlay nav {
+  left: 32px;
+  top: 45%;
+}
+.overlay ul li {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.mobile-devices{
+    display: block;
+}
+.mb-desk{
+  display: none;
+}
+.nav-toggle {
+  top: -45px;
+}
+nav {
+    margin-top: 80px;
+}
+}
