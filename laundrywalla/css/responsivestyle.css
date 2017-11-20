@@ -19,7 +19,7 @@
 	#institute-dashboard .dashboard-notification {
 		width:100%;
 	}
-	
+
 	#institute-dashboard .membership-sec {
 	  margin: 0 auto;
 	  width: 60%;
@@ -50,7 +50,7 @@
 	#home-banner .search-form-wrap .checkboxes .checkbox-title, .search-form-wrap .radiobtns .radio-title {
 	  width: 160px;
 	}
-	
+
 	.search-form-wrap .checkboxes .check-box, .search-form-wrap .radiobtns .radio-btn {
 	  padding: 0 10px;
 	  width: 160px;
@@ -78,7 +78,7 @@
 	}
 }
 
-@media only screen and (max-width:991px){ 
+@media only screen and (max-width:991px){
 	#technology-course .nav.nav-pills.pills-bottom-border li {
 	  padding-right: 23px;
 	  display:inline-block !important;
@@ -241,18 +241,22 @@
 	   margin-top: 12px;
 	}
 
-	/* Start: Registration form4 */	
+	/* Start: Registration form4 */
 	#unique-feature-form4 .unique-feature-content li {
 		width: 247px;
 	}
 	.max-feature-sec > p {
 		padding-right: 70px;
 	}
-	/* End: Registration form4 */	
+	/* End: Registration form4 */
 	.addverstise-img {
 	  display: none;
 	}
-}	
+
+	.services-title {
+	  font-size: 20px;
+	}
+}
 
 @media only screen and (max-width:900px) {
 	#nav-links .main-nav li a {
@@ -270,8 +274,8 @@
 	}
 }
 
-@media only screen and (max-width:900px) and (min-width:768px) {
-	/* Navigation Custom Breakpoint */
+/* Navigation Custom Breakpoint */
+/* @media only screen and (max-width:900px) and (min-width:768px) {
 	.navbar-toggle {
 	  background-color: rgb(2,155,225);
 	  display: block !important;
@@ -312,12 +316,91 @@
 	  position: relative;
 	}
 
-		.navbar-collapse {
+	.navbar-collapse {
 	  border-top: 1px solid rgb(2,155,225);
 	  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
 	  margin-top: 2px;
 	  overflow-x: visible;
 	  padding-left: 15px;
 	  padding-right: 15px;
+	}
+} */
+
+@media only screen and (max-width: 767px) {
+	.mobile-devices {
+	    display: block;
+	}
+
+	.mb-desk {
+	 	display: none;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+	.overlay nav {
+		left: 0;
+		right: 0;
+		top: 30%;
+	}
+
+	.overlay ul li {
+		margin-right: 20px;
+		margin-top: 20px;
+	}
+
+	.overlay ul li a {
+		min-width: 140px;
+		padding: 20px 0px;
+	}
+
+	nav {
+	    margin-top: 80px;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.overlay nav {
+		left: 0;
+		right: 0;
+		top: 30%;
+	}
+
+	.overlay ul li {
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
+	.overlay ul li a {
+		min-width: 80px;
+		padding: 20px 5px;
+		font-size: 12px;
+	}
+
+	.overlay ul li i {
+		font-size: 20px;
+	}
+
+	nav {
+	    margin-top: 80px;
+	}
+}
+
+@media only screen and (max-width: 365px) {
+  .ui-datepicker th {
+    padding: 0.4em;
+  }
+
+  .ui-datepicker td span, .ui-datepicker td a {
+    padding: 0.4em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+	.sub-form:first-child {
+		padding-right: 5px;
+	}
+
+	.sub-form + .sub-form {
+		padding-left: 5px;
 	}
 }
