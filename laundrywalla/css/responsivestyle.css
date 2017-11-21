@@ -287,12 +287,52 @@
 	}
 } */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .mobile-devices {
         display: block;
     }
     .mb-desk {
         display: none;
+    }
+    .pricing-content {
+        width: 70%;
+    }
+    .pricing-content .item {
+        min-width: 100%;
+        height: auto;
+        border-radius: 25px;
+    }
+    .pricing-front {
+        width: 100%;
+    }
+    .pricing-tag {
+        padding: 2%;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .pricing-img {
+        display: none;
+    }
+    .pricing-list-table {
+        width: 90%;
+    }
+    .change-password-wrapper {
+        width: 90%;
+        padding: 4% 10%;
+    }
+    .login-forget-psw-header {
+        width: 90%;
+    }
+    .login-forget-psw-wrapper {
+        width: 90%;
+    }
+    .login-wrapper {
+        width: 90%;
+        padding: 4% 10%;
+    }
+    .signup_wrapper {
+        width: 90%;
+        padding: 4% 10%;
     }
 }
 @media screen and (max-width: 767px) and (min-width: 480px) {
@@ -333,6 +373,36 @@
     }
     nav {
         margin-top: 80px;
+    }
+    .top-header {
+        padding: 15px;
+    }
+    .top-header.scrolled {
+        padding: 15px 10px;
+    }
+    .registeration-btn .btn-default i.fa {
+        display: none;
+    }
+    .registeration-btn .btn-default {
+        font-size: 14px;
+    }
+    .bottom-header {
+        margin-top: 62px;
+    }
+    #create-order {
+        margin-top: 62px;
+    }
+    #change-password {
+        margin-top: 62px;
+    }
+    #loginforget-password {
+        margin-top: 62px;
+    }
+    #login {
+        margin-top: 62px;
+    }
+    .signupsec {
+        margin-top: 62px;
     }
 }
 @media only screen and (max-width: 365px) {
