@@ -334,6 +334,49 @@
         width: 90%;
         padding: 4% 10%;
     }
+    .ud-tabs {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ud-tabs li {
+        flex-grow: 1;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+    .ud-tabs li + li {
+        margin-left: 2px;
+    }
+    .ud-tabs > li > a {
+        font-size: 16px;
+        padding: 8px 6px;
+        background-color: #eee;
+    }
+    .ud-tabs > li.active > a::after {
+        content: '\f107';
+        font: 16px FontAwesome;
+        position: absolute;
+        right: 0;
+        bottom: -42px;
+        left: 0;
+        height: 16px;
+        margin: auto;
+        width: 16px;
+    }
+    .user-dashboard-body .tab-content {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+    .user-dashboard-body .control-label {
+        margin-left: 16px;
+        display: block;
+        font-size: 14px;
+    }
+    .ud-order {
+        padding: 15px 10px;
+    }
 }
 @media screen and (max-width: 767px) and (min-width: 480px) {
     .overlay nav {
@@ -403,6 +446,17 @@
     }
     .signupsec {
         margin-top: 62px;
+    }
+    #user-dashboard {
+        margin-top: 62px;
+    }
+    .ud-tabs > li > a {
+        font-size: 12px;
+    }
+    .user-dashboard-body .control-label {
+        margin-left: 16px;
+        display: block;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 365px) {

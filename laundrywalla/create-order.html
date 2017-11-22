@@ -89,7 +89,18 @@
                 </div>
 
                 <div class="registeration-btn pull-right">
-                    <button class="btn btn-default" type="button">Account</button>
+                    <ul class="list-inline">
+                        <li>
+                            <button class="btn btn-default show-pricing-btn" type="button"><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                Pricing
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-user" aria-hidden="true"></i>User Account
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- End: top navbar -->
@@ -97,7 +108,15 @@
         </header>
 
         <section id="create-order">
-            <h1 class="text-center section-heading">Place Your Order</h1>
+            <div class="create-order-header">
+                <div class="container">
+                    <h1 class="h2 section-heading text-center">Place Your Order</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">New Order</li>
+                    </ol>
+                </div>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-9">
@@ -177,51 +196,35 @@
                                                 <div class="col-lg-12">
                                                     <h1 class="h3 panel-body-title">Choose the service type for this order</h1>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <div class="service-box">
-                                                        <img src="img/washer-machine.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Wash</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-6">
                                                     <div class="service-box">
                                                         <img src="img/two-shirts.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Dry Clean</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
+                                                        <h1 class="h4 service-name" data-toggle="modal" data-target="#drycleanitems">Dry Clean</h1>
+                                                        <p class="pricing-tag"><a href="#" data-toggle="modal" data-target="#dryclean">$ Pricing</a>
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <div class="service-box">
-                                                        <img src="img/washing.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Wash &amp; Press</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="service-box">
-                                                        <img src="img/washer-machine.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Wash &amp; Fold</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="service-box">
-                                                        <img src="img/iron.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Press Only</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-6">
                                                     <div class="service-box">
                                                         <img src="img/hand-wash.png" alt="washing" />
-                                                        <h1 class="h4 service-name">Special Care</h1>
-                                                        <p class="pricing-tag"><a href="">$ Pricing</a>
+                                                        <h1 class="h4 service-name" data-toggle="modal" data-target="#washpressitems">Wash &amp; Press</h1>
+                                                        <p class="pricing-tag"><a href="#" data-toggle="modal" data-target="#washpress">$ Pricing</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="service-box">
+                                                        <img src="img/washer-machine.png" alt="washing" />
+                                                        <h1 class="h4 service-name" data-toggle="modal" data-target="#washfolditems">Wash &amp; Fold</h1>
+                                                        <p class="pricing-tag"><a href="#" data-toggle="modal" data-target="#washfold">$ Pricing</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="service-box">
+                                                        <img src="img/iron.png" alt="washing" />
+                                                        <h1 class="h4 service-name" data-toggle="modal" data-target="#pressitems">Press Only</h1>
+                                                        <p class="pricing-tag"><a href="#" data-toggle="modal" data-target="#press">$ Pricing</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -236,12 +239,45 @@
                             <div class="panel">
                                 <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Additional Detail
-                    </a>
-                  </h4>
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Detergent Type
+                                        </a>
+                                    </h4>
                                 </div>
                                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h1 class="h3 panel-body-title">Choose the detergent type for your laundry</h1>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <form action="" method="POST">
+                                                    <div class="form-group">
+                                                        <select class="form-control select-detergent" name="detergent">
+                                                            <option value="">&nbsp;</option>
+                                                            <option value="det1">Ariel</option>
+                                                            <option value="det2">Surf Excel</option>
+                                                            <option value="det3">Tide</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="next-section text-right">
+                                            <button type="button" class="btn btn-next">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                          Additional Detail
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -332,6 +368,135 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingSix">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Order Summary
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                                    <div class="panel-body">
+                                        <div class="order-summary">
+                                            <div class="row">
+                                                <div class="col-lg-12 order-detail-part">
+                                                    <div class="pick-up-address">
+                                                        <h1 class="h4">Pick Up Address</h1>
+                                                        <address>
+                                                            112 Floyd St,<br />
+                                                            Flat 10, Charles Apt, <br/>
+                                                            Melbourne, 101010
+                                                        </address>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 order-detail-part">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <h1 class="h4">Pick Up Date &amp; Time</h1>
+                                                            <div>Date: 22-12-2017</div>
+                                                            <div>Time: 11:00 am</div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <h1 class="h4">Dropping Date &amp; Time</h1>
+                                                            <div>Date: 25-12-2017</div>
+                                                            <div>Time: 11:30 am</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 order-detail-part">
+                                                    <div class="ordered-services">
+                                                        <h1 class="h4">Services Summary</h1>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <h1 class="h5">Wash &amp; Fold</h1>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-left">Item</th >
+                                                                            <th class="text-right">Qty</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-left">Shirts</td>
+                                                                            <td class="text-right">2</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <h1 class="h5">Wash &amp; Press</h1>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-left">Item</th >
+                                                                            <th class="text-right">Qty</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-left">Shirts</td>
+                                                                            <td class="text-right">2</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <h1 class="h5">Dry Clean</h1>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-left">Item</th >
+                                                                            <th class="text-right">Qty</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-left">Shirts</td>
+                                                                            <td class="text-right">2</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <h1 class="h5">Press</h1>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-left">Item</th >
+                                                                            <th class="text-right">Qty</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="text-left">Shirts</td>
+                                                                            <td class="text-right">2</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 order-detail-part">
+                                                    <h1 class="h4">Detergent Type</h1>
+                                                    <div>Tide</div>
+                                                </div>
+                                                <div class="col-lg-12 order-detail-part">
+                                                    <h1 class="h4">Additional Info</h1>
+                                                    <div>
+                                                        <ul>
+                                                            <li>Wash delicates separately.</li>
+                                                            <li>Wash white and colored clothes separately.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-3 clear-padding">
@@ -342,7 +507,7 @@
             </div>
         </section>
 
-        <footer data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200" data-aos-delay="300">
+        <footer>
             <section id="contact">
                 <div class="container-fluid">
                     <div class="row">
@@ -408,6 +573,965 @@
         </footer>
 
     </main>
+
+    <div class="pricing-container">
+        <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+        <h1 class="section-heading">All Pricing</h1>
+        <div class="pricing-content">
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/two-shirts.png" alt="Dry Clean" class="pricing-img" />
+                    <figcaption class="pricing-tag">Dry Clean</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Dry Clean</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Suit - 2 piece</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dinner Jacket</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Sweater / Cardigan</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blouse</td>
+                                    <td class="text-right">$11.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Tie / Scarf</td>
+                                    <td class="text-right">$8.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Midi</td>
+                                    <td class="text-right">$16.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Cocktail</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Maxi</td>
+                                    <td class="text-right">$24.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Outdoor Jacket</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Trench / Heavy Coat</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Leather Jacket</td>
+                                    <td class="text-right">$65.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blanket</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - S/D</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - Q/K</td>
+                                    <td class="text-right">$35.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Stain Treatment</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Special Material Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Extra Press Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/washer-machine.png" alt="Wash & Fold" class="pricing-img" />
+                    <figcaption class="pricing-tag">Wash &amp; Fold</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Wash &amp; Fold</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                               <tr>
+                                   <td class="text-left">Laundry per kg</td>
+                                   <td class="text-right">$5.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">(3 kg minimum per load)</td>
+                                   <td class="text-right"></td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Blanket</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - S/D</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - Q/K</td>
+                                   <td class="text-right">$35.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Pillow</td>
+                                   <td class="text-right">$20.00</td>
+                               </tr>
+                               <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td class="text-right"></td>
+                                </tr>
+                               <tr>
+                                   <td class="text-left">Hotel Service Fee</td>
+                                   <td class="text-right">$10.00</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/hand-wash.png" alt="Wash & Press" class="pricing-img" />
+                    <figcaption class="pricing-tag">Wash &amp; Press</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Wash &amp; Press</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.90</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$5.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$6.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pillowcase</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/iron.png" alt="Press" class="pricing-img" />
+                    <figcaption class="pricing-tag">Press</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Press</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$4.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$6.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$18.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <!-- Press Only -->
+    <div class="modal fade" id="press" tabindex="-1" role="dialog" aria-labelledby="Press Pricing">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Press Only Pricing</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$4.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$6.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$18.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Press Only -->
+
+    <!-- Dry Clean -->
+    <div class="modal fade" id="dryclean" tabindex="-1" role="dialog" aria-labelledby="Dry Clean Pricing">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Dry Clean Pricing</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Suit - 2 piece</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dinner Jacket</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Sweater / Cardigan</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blouse</td>
+                                    <td class="text-right">$11.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Tie / Scarf</td>
+                                    <td class="text-right">$8.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Midi</td>
+                                    <td class="text-right">$16.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Cocktail</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Maxi</td>
+                                    <td class="text-right">$24.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Outdoor Jacket</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Trench / Heavy Coat</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Leather Jacket</td>
+                                    <td class="text-right">$65.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blanket</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - S/D</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - Q/K</td>
+                                    <td class="text-right">$35.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Stain Treatment</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Special Material Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Extra Press Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Dry Clean -->
+
+    <!-- Wash & Press -->
+    <div class="modal fade" id="washpress" tabindex="-1" role="dialog" aria-labelledby="Wash Press Pricing">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Wash &amp; Press Pricing</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.90</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$5.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$6.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pillowcase</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Wash & Press -->
+
+    <!-- Wash & Fold -->
+    <div class="modal fade" id="washfold" tabindex="-1" role="dialog" aria-labelledby="Wash Fold Pricing">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Wash &amp; Fold Pricing</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                               <tr>
+                                   <td class="text-left">Laundry per kg</td>
+                                   <td class="text-right">$5.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">(3 kg minimum per load)</td>
+                                   <td class="text-right"></td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Blanket</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - S/D</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - Q/K</td>
+                                   <td class="text-right">$35.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Pillow</td>
+                                   <td class="text-right">$20.00</td>
+                               </tr>
+                               <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td class="text-right"></td>
+                                </tr>
+                               <tr>
+                                   <td class="text-left">Hotel Service Fee</td>
+                                   <td class="text-right">$10.00</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Wash & Fold -->
+
+    <!-- End Pricing Modal -->
+
+    <!-- Item Information, Add and Quantity Modal -->
+    <!-- Press Only -->
+    <div class="modal fade" id="pressitems" tabindex="-1" role="dialog" aria-labelledby="Press Items Information">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add items for Press</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        <div class="table-responsive">
+                            <table class="table table-item-info">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Item</th>
+                                        <th class="text-right">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">Business Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">T-Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Polo Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Shorts</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Pants / Jeans</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Skirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Jacket / Blazer</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Bed Sheet - S/D</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Bed Sheet - Q/K</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Quilt Cover - S/D</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Quilt Cover - Q/K</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Hotel Service Fee</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">(Only for hotel deliveries)</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-modal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Press Only -->
+
+    <!-- Dry Clean -->
+    <div class="modal fade" id="drycleanitems" tabindex="-1" role="dialog" aria-labelledby="Dry Clean Item Information">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add items for Dry Clean</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        <div class="table-responsive">
+                            <table class="table table-item-info">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">Suit - 2 piece</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Jacket / Blazer</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Dinner Jacket</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Pants / Jeans</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Skirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Sweater / Cardigan</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Blouse</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Tie / Scarf</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Dress - Midi</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Dress - Cocktail</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Dress - Maxi</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Outdoor Jacket</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Trench / Heavy Coat</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Leather Jacket</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Blanket</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Doona / Underlay - S/D</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Doona / Underlay - Q/K</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Stain Treatment</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Special Material Surcharge</td>
+                                        <td class="text-right">30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Extra Press Surcharge</td>
+                                        <td class="text-right">30%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Hotel Service Fee</td>
+                                        <td class="text-right">$10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">(Only for hotel deliveries)</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-modal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Dry Clean -->
+
+    <!-- Wash & Press -->
+    <div class="modal fade" id="washpressitems" tabindex="-1" role="dialog" aria-labelledby="Wash Press Item Information">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add Items for Wash &amp; Press</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        <div class="table-responsive">
+                            <table class="table table-item-info">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">Business Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">T-Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Polo Shirt</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Shorts</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Pants / Jeans</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Bed Sheet - S/D</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Bed Sheet - Q/K</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Quilt Cover - S/D</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Quilt Cover - Q/K</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Pillowcase</td>
+                                        <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">Hotel Service Fee</td>
+                                        <td class="text-right">$10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">(Only for hotel deliveries)</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-modal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Wash & Press -->
+
+    <!-- Wash & Fold -->
+    <div class="modal fade" id="washfolditems" tabindex="-1" role="dialog" aria-labelledby="Wash Fold Item Information">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add Items for Wash &amp; Fold</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        <div class="table-responsive">
+                            <table class="table table-item-info">
+                                <tbody>
+                                   <tr>
+                                       <td class="text-left">Laundry per kg</td>
+                                       <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                   </tr>
+                                   <tr>
+                                       <td class="text-left">(3 kg minimum per load)</td>
+                                       <td class="text-right"></td>
+                                   </tr>
+                                   <tr>
+                                       <td class="text-left">Blanket</td>
+                                       <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                   </tr>
+                                   <tr>
+                                       <td class="text-left">Doona / Underlay - S/D</td>
+                                       <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                   </tr>
+                                   <tr>
+                                       <td class="text-left">Doona / Underlay - Q/K</td>
+                                       <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                   </tr>
+                                   <tr>
+                                       <td class="text-left">Pillow</td>
+                                       <td class="text-right"><input type="number" placeholder="Qty" class="form-control"></td>
+                                   </tr>
+                                   <tr>
+                                        <td class="text-left">(Only for hotel deliveries)</td>
+                                        <td class="text-right"></td>
+                                    </tr>
+                                   <tr>
+                                       <td class="text-left">Hotel Service Fee</td>
+                                       <td class="text-right">$10.00</td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-modal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Wash & Fold -->
+
+    <!-- End Item Information, Add and Quantity Modal -->
 
     <!-- Start: Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

@@ -180,7 +180,7 @@ textarea {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 11;
     transition: all linear 0.3s;
 }
 .top-header.scrolled {
@@ -1151,15 +1151,6 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
 .mobile-devices {
     display: none;
 }
-/*************************************
-  Create Order Page CSS
-**************************************/
-
-#create-order {
-    margin-top: 90px;
-    padding: 20px 0px;
-    background-color: #f9f9f9;
-}
 .section-heading {
     font-size: 35px;
     font-weight: 600;
@@ -1172,6 +1163,47 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
     width: 300px;
     display: block;
     margin: 5px auto 20px;
+}
+/*************************************
+  Create Order Page CSS
+**************************************/
+
+#create-order {
+    margin-top: 90px;
+    background-color: #f9f9f9;
+}
+.create-order-header {
+    background: url('../img/housework-launderette.jpg') no-repeat center 30%;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+.create-order-header::after {
+    content: '';
+    background-color: #EF395CC5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.create-order-header .section-heading {
+    color: #eeeeee;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.create-order-header .section-heading::after {
+    background: none;
+    height: 0;
+    width: 0;
+    margin: 0;
 }
 #createOrderAccordian .panel {
     border: 1px outset #ddd;
@@ -1268,6 +1300,7 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
 }
 .pricing-tag > a,
 .pricing-tag > a:visited {
+    font-size: 14px;
     color: #aaa;
 }
 .pricing-tag > a:hover {
@@ -1291,6 +1324,14 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
 }
 .popover.top>.arrow::after {
     border-top-color: #0091D9;
+}
+.table-item-info>tbody>tr>td, .table-item-info>tbody>tr>th, .table-item-info>tfoot>tr>td, .table-item-info>tfoot>tr>th, .table-item-info>thead>tr>td, .table-item-info>thead>tr>th {
+    vertical-align: middle;
+}
+.order-detail-part + .order-detail-part {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 /* jQuery UI Datepicker Custom Styling */
 
@@ -1438,4 +1479,137 @@ html .ui-button.ui-state-disabled:active {
 .pricing-list>tbody>tr>td, .pricing-list>tbody>tr>th, .pricing-list>tfoot>tr>td, .pricing-list>tfoot>tr>th, .pricing-list>thead>tr>td, .pricing-list>thead>tr>th {
     padding: 14px 12px;
     color: #fff;
+}
+
+/*************************************
+  User Dashboard Page CSS
+**************************************/
+
+#user-dashboard {
+    margin-top: 90px;
+}
+.uesr-dashboard-header {
+    background: url('../img/housework-launderette.jpg') no-repeat center 30%;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+.uesr-dashboard-header::after {
+    content: '';
+    background-color: #EA9335c5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.uesr-dashboard-header .section-heading {
+    color: #eeeeee;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.uesr-dashboard-header .section-heading::after {
+    background: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+.breadcrumb {
+    background: none;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    margin-bottom: 0;
+    z-index: 1;
+}
+.breadcrumb li.active {
+    color: #f5f5f5;
+    font-size: 14px;
+}
+.breadcrumb li a {
+    color: #eee;
+    font-size: 14px;
+}
+.breadcrumb>li+li::before {
+    color: #eee;
+    content: "\f105";
+    font: 14px FontAwesome;
+}
+.user-dashboard-body {
+    padding: 4% 0%;
+}
+.user-dashboard-body .tab-content {
+    margin-left: 5px;
+}
+.ud-menu {
+    border-right: 2px solid #0089de;
+}
+.ud-tabs li {
+    padding: 2px 0px;
+}
+.ud-tabs li + li {
+    border-top: 1px solid #ddd;
+}
+.ud-tabs > li > a {
+    font-size: 20px;
+    color: #0081de;
+    transition: all ease-in 0.4s;
+    border-radius: 8px;
+    position: relative;
+}
+.ud-tabs > li > a:hover
+.ud-tabs > li > a:focus {
+    background-color: #eee;
+}
+.ud-tabs > li.active > a::after {
+    content: '\f054';
+    font: 14px FontAwesome;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    height: 16px;
+    margin: auto;
+}
+.tab-heading {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+#user-dashboard .btn-default {
+    background-color: #0091D9;
+    color: #fff;
+    background-image: none;
+    text-shadow: none;
+}
+.ud-order {
+    padding: 30px 15px;
+    border: 2px solid #0081de;
+    color: #0091D9;
+    font-size: 20px;
+    border-radius: 4px;
+    position: relative;
+}
+.ud-order:hover {
+    cursor: pointer;
+    box-shadow: inset -1px -1px 2px 0px #0091D9C5;
+}
+.ud-order::after {
+    content: '\f054';
+    font: 14px FontAwesome;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 16px;
+}
+.select2-container {
+    width: 100% !important;
 }

@@ -1,6 +1,27 @@
 $(document).ready(function() {
     AOS.init();
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $( ".select" ).select2({
+        theme: "bootstrap"
+    });
+
+    $(".select-month").select2({
+      placeholder: "Select Month",
+      allowClear: true
+    });
+
+    $(".select-year").select2({
+      placeholder: "Select Year",
+      allowClear: true
+    });
+
+    $(".select-detergent").select2({
+      placeholder: "Select Detergent Type",
+      allowClear: true
+    });
+
+
 });
 
 var $topHeader = $('.top-header');

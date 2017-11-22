@@ -1,0 +1,648 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundry Walla | User Dashboard </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"
+    rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.9/select2-bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivestyle.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <main id="laundryhome">
+
+        <header>
+            <!-- Start: top navbar -->
+            <div class="top-header col-sm-12">
+                <div class="pull-left">
+                    <div class="navicon">
+                        <p><a id="trigger-overlay" class="nav_slide_button nav-toggle"
+                            href="#"><span></span></a>
+                        </p>
+                    </div>
+                    <div class="overlay overlay-boxify mb-desk">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"><i class="fa fa-th-large" aria-hidden="true"></i>Our Home</a>
+                                </li>
+                                <li><a href="#about-us"><i class="fa fa-user" aria-hidden="true"></i>About US</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li><a href="#work"><i class="fa fa-briefcase" aria-hidden="true"></i>Work</a>
+                                </li>
+                                <li><a href="#services"><i class="fa fa-refresh" aria-hidden="true"></i>Services</a>
+                                </li>
+                                <li><a href="#contact"><i class="fa fa-phone-square" aria-hidden="true"></i>Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="overlay overlay-boxify mobile-devices">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"><i class="fa fa-th-large" aria-hidden="true"></i>Our Home</a>
+                                </li>
+                                <li><a href="#about-us"><i class="fa fa-user" aria-hidden="true"></i>About US</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li><a href="#work"><i class="fa fa-briefcase" aria-hidden="true"></i>Work</a>
+                                </li>
+                                <li><a href="#services"><i class="fa fa-refresh" aria-hidden="true"></i>Services</a>
+                                </li>
+                                <li><a href="#contact"><i class="fa fa-phone-square" aria-hidden="true"></i>Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="registeration-btn pull-right">
+                    <ul class="list-inline">
+                        <li>
+                            <button class="btn btn-default show-pricing-btn" type="button"><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                Pricing
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-user" aria-hidden="true"></i>User Account
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End: top navbar -->
+
+        </header>
+
+        <section id="user-dashboard">
+            <div class="uesr-dashboard-header">
+                <div class="container">
+                    <h1 class="h2 section-heading text-center">User Dashboard</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="user-dashboard-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 ud-menu">
+                            <!-- Nav tabs -->
+                            <ul class="nav ud-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+                                <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
+                                <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment</a></li>
+                                <li role="presentation"><a href="#region" aria-controls="region" role="tab" data-toggle="tab">Region</a></li>
+                                <li role="presentation"><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-9">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- Account Tab -->
+                                <div role="tabpanel" class="tab-pane fade in active" id="account">
+                                    <h1 class="tab-heading h3">Account Profile</h1>
+                                    <form class="form-horizontal" action="" method="POST">
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="billEmail" class="col-sm-2 control-label">Billing Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="billEmail" placeholder="Billing Email" name="billing-email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mobile" class="col-sm-2 control-label">Mobile</label>
+                                            <div class="col-sm-10">
+                                                <input type="tel" class="form-control" id="mobile" placeholder="Mobile" name="mobile">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-sm-2 control-label">Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- End Account Tab -->
+
+                                <!-- Orders Tab -->
+                                <div role="tabpanel" class="tab-pane fade" id="orders">
+                                    <h1 class="h3 tab-heading">Create New Order</h1>
+                                    <div class="ud-order" onclick="location.href='create-order.html'">
+                                        Click to begin a new order
+                                    </div>
+                                </div> <!-- End Orders Tab -->
+
+                                <!-- Payment Tab -->
+                                <div role="tabpanel" class="tab-pane fade" id="payment">
+                                    <h1 class="tab-heading h3">Payment Profile</h1>
+                                    <form class="form-horizontal" action="" method="POST">
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">Card Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="name" placeholder="Enter name on your card" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cnum" class="col-sm-2 control-label">Card Number</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="cnum" placeholder="Enter your card number" name="cnum">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exdate" class="col-sm-2 control-label">Exp Date</label>
+                                            <div class="col-sm-4 col-xs-6">
+                                                <select class="form-control select-month" name="month">
+                                                    <option value="">&nbsp;</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <select class="form-control select-year" name="year">
+                                                    <option value="">&nbsp;</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv" class="col-sm-2 control-label">CVV</label>
+                                            <div class="col-sm-4">
+                                                <input type="password" class="form-control" id="cvv" placeholder="Enter the CVV" name="cvv">
+                                            </div>
+                                            <div class="col-sm-6">&nbsp;</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- End Payment Tab -->
+
+                                <!-- Region Tab -->
+                                <div role="tabpanel" class="tab-pane fade" id="region">
+                                    <h1 class="h3 tab-heading">Select Region</h1>
+                                    <form action="" class="form-horizontal" method="POST">
+                                        <div class="form-group">
+                                            <label for="region" class="col-sm-2 control-label">Region</label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control select-region" name="region" id="region">
+                                                    <option value="">&nbsp;</option>
+                                                    <option value="mel">Melbourne</option>
+                                                    <option value="syd">Sydney</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- End Region Tab -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200" data-aos-delay="300">
+            <section id="contact">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="contactwrap col-sm-12">
+                                <div class="contactus-content text-center">
+                                    <h2>Contact</h2>
+                                </div>
+                                <div class="conatctform col-sm-12">
+                                    <form>
+                                        <div class="col-sm-12 clear-padding">
+                                            <div class="form-group clear-padding col-sm-6 sub-form">
+                                                <input type="text" class="form-control" id="usrname" placeholder="Name">
+                                            </div>
+                                            <div class="form-group clear-padding col-sm-6 sub-form">
+                                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="mail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="3" id="comment" placeholder="Comments"></textarea>
+                                        </div>
+                                        <div class="submitform text-center">
+                                            <button type="submit" class="btn btn-default">Submit</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="contact-details">
+                                <div class="col-sm-6">
+                                    <div class="contdetail-inner text-center">
+                                        <ul>
+                                            <li>
+                                                <h3>Contact Us</h3>
+                                            </li>
+                                            <li>231, Sydney Cove Australia</li>
+                                            <li>12345605588</li>
+                                            <li><img src="img/Laundrywalla.png">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50422.473229320494!2d144.93524657661882!3d-37.82741342037586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne+VIC+3004%2C+Australia!5e0!3m2!1sen!2sin!4v1510736898776" width="100%" height="240" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 clear-padding hidden-xs">
+                            <div class="contact-rgtoverlay">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copywrite text-center">
+                    <p>Copyright © 2017 Laundry Walla</p>
+                </div>
+            </section>
+        </footer>
+
+    </main>
+
+    <div class="pricing-container">
+        <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+        <h1 class="section-heading">All Pricing</h1>
+        <div class="pricing-content">
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/two-shirts.png" alt="Dry Clean" class="pricing-img" />
+                    <figcaption class="pricing-tag">Dry Clean</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Dry Clean</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Suit - 2 piece</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dinner Jacket</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Sweater / Cardigan</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blouse</td>
+                                    <td class="text-right">$11.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Tie / Scarf</td>
+                                    <td class="text-right">$8.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Midi</td>
+                                    <td class="text-right">$16.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Cocktail</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Dress - Maxi</td>
+                                    <td class="text-right">$24.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Outdoor Jacket</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Trench / Heavy Coat</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Leather Jacket</td>
+                                    <td class="text-right">$65.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Blanket</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - S/D</td>
+                                    <td class="text-right">$25.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Doona / Underlay - Q/K</td>
+                                    <td class="text-right">$35.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Stain Treatment</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Special Material Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Extra Press Surcharge</td>
+                                    <td class="text-right">30%</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/washer-machine.png" alt="Wash & Fold" class="pricing-img" />
+                    <figcaption class="pricing-tag">Wash &amp; Fold</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Wash &amp; Fold</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                               <tr>
+                                   <td class="text-left">Laundry per kg</td>
+                                   <td class="text-right">$5.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">(3 kg minimum per load)</td>
+                                   <td class="text-right"></td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Blanket</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - S/D</td>
+                                   <td class="text-right">$25.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Doona / Underlay - Q/K</td>
+                                   <td class="text-right">$35.00</td>
+                               </tr>
+                               <tr>
+                                   <td class="text-left">Pillow</td>
+                                   <td class="text-right">$20.00</td>
+                               </tr>
+                               <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td class="text-right"></td>
+                                </tr>
+                               <tr>
+                                   <td class="text-left">Hotel Service Fee</td>
+                                   <td class="text-right">$10.00</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/hand-wash.png" alt="Wash & Press" class="pricing-img" />
+                    <figcaption class="pricing-tag">Wash &amp; Press</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Wash &amp; Press</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.90</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$5.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$6.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$20.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pillowcase</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <figure class="pricing-front">
+                    <img src="img/iron.png" alt="Press" class="pricing-img" />
+                    <figcaption class="pricing-tag">Press</figcaption>
+                </figure>
+                <div class="pricing-list-container">
+                    <div class="close-btn clearfix"><i class="fa fa-close pull-right" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"></i></div>
+                    <h1 class="content-title">Press</h1>
+                    <h4 class="content-subtitle">FREE delivery on orders $25 and over Otherwise $10 flat fee added</h4>
+                    <div class="pricing-list-table table-responsive">
+                        <table class="table pricing-list">
+                            <tbody>
+                                <tr>
+                                    <td class="text-left">Business Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">T-Shirt</td>
+                                    <td class="text-right">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Polo Shirt</td>
+                                    <td class="text-right">$4.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Shorts</td>
+                                    <td class="text-right">$6.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pants / Jeans</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Skirt</td>
+                                    <td class="text-right">$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Jacket / Blazer</td>
+                                    <td class="text-right">$9.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - S/D</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Bed Sheet - Q/K</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - S/D</td>
+                                    <td class="text-right">$13.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Quilt Cover - Q/K</td>
+                                    <td class="text-right">$18.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Hotel Service Fee</td>
+                                    <td class="text-right">$10.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">(Only for hotel deliveries)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start: Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/script.js"></script>
+    <!-- End: Scripts -->
+
+</body>
+
+</html>
