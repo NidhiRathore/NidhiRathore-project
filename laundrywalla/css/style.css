@@ -185,8 +185,8 @@ textarea {
 }
 .top-header.scrolled {
     padding: 13px 17px 13px 22px;
-    box-shadow: 1px 1px 3px 2px #00005891;
-    background-color: #0190dee0;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 88, 0.8);
+    background-color: rgba(1, 144, 222, 0.65);
 }
 .registeration-btn .btn-default {
     text-transform: capitalize;
@@ -1183,7 +1183,7 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
 }
 .create-order-header::after {
     content: '';
-    background-color: #EF395CC5;
+    background-color: rgba(239, 57, 92, 0.7);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1374,7 +1374,7 @@ html .ui-button.ui-state-disabled:active {
 
 .pricing-container {
     box-sizing: border-box;
-    background-image: radial-gradient(circle 248px at center, #16d9e3ff 0%, #30c7ecfe 47%, #46aef7ef 100%);
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, rgba(70, 174, 247, 0.95) 100%);
     text-align: center;
     width: 100%;
     height: 100%;
@@ -1392,12 +1392,12 @@ html .ui-button.ui-state-disabled:active {
     padding: 2% 2% 0% 2%;
 }
 .pricing-container .close-btn i.fa {
-    color: #ffffffdd;
+    color: #ffffff;
     font-size: 30px;
     cursor: pointer;
 }
 .pricing-container .section-heading {
-    color: #ffffffdd;
+    color: #ffffff;
     padding: 1% 2%;
     margin: 0;
 }
@@ -1444,7 +1444,7 @@ html .ui-button.ui-state-disabled:active {
     overflow: scroll;
     display: none;
     transition: all ease-in 0.4s;
-    background-image: radial-gradient(circle 248px at center, #16d9e3ff 0%, #30c7ecfe 47%, #46aef7ef 100%);
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, rgba(70, 174, 247, 0.95) 100%);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -1498,7 +1498,7 @@ html .ui-button.ui-state-disabled:active {
 }
 .uesr-dashboard-header::after {
     content: '';
-    background-color: #EA9335c5;
+    background-color: rgba(234, 147, 53, 0.7);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1598,7 +1598,7 @@ html .ui-button.ui-state-disabled:active {
 }
 .ud-order:hover {
     cursor: pointer;
-    box-shadow: inset -1px -1px 2px 0px #0091D9C5;
+    box-shadow: inset -1px -1px 2px 0px rgba(0, 145, 217, 0.7);
 }
 .ud-order::after {
     content: '\f054';
