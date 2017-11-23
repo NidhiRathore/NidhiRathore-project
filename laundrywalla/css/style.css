@@ -1359,13 +1359,165 @@ bckground: -moz-linear-gradient(#0190DE, #0190DE); /* For Firefox 3.6 to 15 */
 .ui-button,
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-    background: #fff;
+    /* background: #fff; */
 }
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
     background: #0091D9;
     color: #fff;
+}
+
+/* Switch CSS */
+label.reco {
+    cursor: pointer;
+    line-height: 2;
+    font-size: 19px;
+    color: #c1c1c1;
+    font-weight: normal;
+}
+#reco-left {
+    margin-right: 36px;
+    width: 110px;
+    display: inline-block;
+    text-align: right;
+}
+label.reco [type="radio"] {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    opacity: 0;
+}
+input[type=radio] {
+    -webkit-appearance: radio;
+}
+input[type=checkbox], input[type=radio] {
+    margin: 4px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+input[type=checkbox], input[type=radio] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+label.reco [type="radio"]:checked+span {
+    color: #328af2;
+}
+label.reco [type="radio"]:checked+span::before {
+    background-color: #328af2;
+    border: solid 3px #ececec;
+}
+label.reco [type="radio"]+span::before {
+    content: '';
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    vertical-align: -.15em;
+    border-radius: 21px;
+    transition: .2s ease all;
+    background-color: #fff;
+    border: solid 3px #ececec;
+}
+#reco-divider {
+    width: 82px;
+    display: inline-block;
+    border-top: 6px solid #ececec;
+    padding-bottom: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+#reco-right {
+    margin-left: 36px;
+    width: 110px;
+    display: inline-block;
+}
+label.reco-type {
+    cursor: pointer;
+    line-height: 2;
+    font-size: 19px;
+    color: #c1c1c1;
+    font-weight: 600;
+}
+#reco-type-middle {
+    margin-left: 44px;
+    margin-right: 44px;
+}
+
+/* Time Picker and Date Picker CSS */
+.time-picker {
+    display: none;
+    position: absolute;
+    width: 240px;
+    z-index: 99;
+}
+.time-picker-content {
+    border: 1px solid #d8d8d8;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+}
+.time-picker-content::after,
+.time-picker-content::before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.time-picker-content::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 15px;
+    margin-left: -15px;
+}
+.time-picker-content::before {
+    border-color: rgba(178, 178, 178, 0);
+    border-bottom-color: #b2b2b2;
+    border-width: 16px;
+    margin-left: -16px;
+}
+.time-picker-content li {
+    cursor: pointer;
+}
+.time-picker-content ul {
+    height: 145px;
+    overflow-y: scroll;
+    padding: 0 20px;
+    border-top: 1px solid #d8d8d8;
+    text-align: center;
+}
+.dtpicker {
+    position: relative;
+}
+.selected-time-box {
+    padding: 10px 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.selected-time-box img {
+    float: right;
+    padding-top: 5px;
+}
+.selected_time {
+    color: #328af2;
+}
+ul.list-time li {
+    padding: 4px 0;
+    color: #33333;
+}
+ul.list-time li:hover,
+ul.list-time li:focus {
+    color: #00089D;
 }
 
 /*************************************

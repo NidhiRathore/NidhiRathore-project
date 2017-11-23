@@ -16,14 +16,12 @@
     <link rel="apple-touch-icon" href="#">
     <link rel="stylesheet" href="css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/lib/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"
-    rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.9/select2-bootstrap.min.css"
-    rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-    rel="stylesheet">
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/lib/select2.min.css">
+    <link rel="stylesheet" href="css/lib/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsivestyle.css">
 
@@ -121,7 +119,7 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="panel-group" id="createOrderAccordian" role="tablist" aria-multiselectable="true">
-                            <div class="panel active">
+                            <div class="panel">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -129,7 +127,7 @@
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body">
                                         <h1 class="h3 panel-body-title">Where do you want you items picked up?</h1>
                                         <form action="" method="POST">
@@ -143,19 +141,19 @@
                                                     />
                                                 </div>
                                             </div>
+                                            <div class="pick-up-map">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50422.473229320494!2d144.93524657661882!3d-37.82741342037586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne+VIC+3004%2C+Australia!5e0!3m2!1sen!2sin!4v1510736898776"
+                                                width="100%" height="280" frameborder="0"
+                                                style="border:0" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="next-section text-right">
+                                                <button type="button" class="btn btn-next" type="submit" value="Next">Next</button>
+                                            </div>
                                         </form>
-                                        <div class="pick-up-map">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50422.473229320494!2d144.93524657661882!3d-37.82741342037586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne+VIC+3004%2C+Australia!5e0!3m2!1sen!2sin!4v1510736898776"
-                                            width="100%" height="280" frameborder="0"
-                                            style="border:0" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="next-section text-right">
-                                            <button type="button" class="btn btn-next">Next</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel">
+                            <div class="panel active">
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#createOrderAccordian" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -163,21 +161,66 @@
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-lg-6 text-center">
-                                                <h1 class="h4">When do you want you items picked up?</h1>
-                                                <div id="pick-up-datepicker"></div>
+                                        <form action="" method="POST">
+                                            <input type="hidden" id="pickupDate" name="pickupDate" />
+                                            <input type="hidden" id="pickupTime" name="pickupTime" />
+                                            <input type="hidden" id="dropDate" name="dropDate" />
+                                            <input type="hidden" id="dropTime" name="dropTime" />
+                                            <div class="row">
+                                                <div class="col-lg-6 text-center">
+                                                    <h1 class="h4">When do you want you items picked up?</h1>
+                                                    <div id="pick-up-datepicker" class="dtpicker">
+                                                        <div class="time-picker">
+                                                            <div class="time-picker-content">
+                                                                <div class="selected-time-box blue-text text-center"><span id="selected_time">- Select Time -</span></div>
+                                                                <ul class="list-time" data-id="pickupTime">
+                                                                    <li index="0">09:00 - 10:00</li>
+                                                                    <li index="1">10:00 - 11:00</li>
+                                                                    <li index="2">11:00 - 12:00</li>
+                                                                    <li index="3">13:00 - 14:00</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 text-center">
+                                                    <h1 class="h4">When do you want you items dropped off?</h1>
+                                                    <div id="drop-datepicker">
+                                                        <div class="time-picker">
+                                                            <div class="time-picker-content">
+                                                                <div class="selected-time-box blue-text text-center"><span id="selected_time">- Select Time -</span></div>
+                                                                <ul class="list-time" data-id="dropTime">
+                                                                    <li index="0">09:00 - 10:00</li>
+                                                                    <li index="1">10:00 - 11:00</li>
+                                                                    <li index="2">11:00 - 12:00</li>
+                                                                    <li index="3">13:00 - 14:00</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-6 text-center">
-                                                <h1 class="h4">When do you want you items dropped off?</h1>
-                                                <div id="drop-datepicker"></div>
+                                            <div class="text-center">
+                                                <div>
+                                                    <label class="reco"><span id="reco-left">ONCE</span><input type="radio" id="reco_once" name="Reco" value="0" checked /><span></span></label>
+                                                    <span id="reco-divider"></span>
+                                                    <label class="reco"><input type="radio" id="reco_recurring" name="Reco" value="1"  /><span></span><span id="reco-right">RECURRING</span></label>
+                                                </div>
+                                                <div id="reco-type-list" style="display:none; margin-top:20px;">
+                                                    <label class="reco-type"><input type="radio" name="RecoType" value="1" checked /> <span>EVERY <i>WEEK</i></span></label>
+                                                    <label class="reco-type" id="reco-type-middle" style=""><input type="radio" name="RecoType" value="2"  /> <span>EVERY <i>2 WEEKS</i></span></label>
+                                                    <label class="reco-type"><input type="radio" name="RecoType" value="3"  /> <span>EVERY <i>4 WEEKS</i></span></label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="next-section text-right">
-                                            <button type="button" class="btn btn-next">Next</button>
-                                        </div>
+                                            <div class="next-section text-right">
+                                                <button type="button" class="btn btn-next" type="submit" value="Next">Next</button>
+                                            </div>
+                                        </form>
+                                        <input type="hidden" id="ListPickupDate" value="[&quot;11/24/2017&quot;,&quot;11/25/2017&quot;,&quot;11/26/2017&quot;,&quot;11/27/2017&quot;,&quot;11/28/2017&quot;,&quot;11/29/2017&quot;,&quot;11/30/2017&quot;,&quot;12/1/2017&quot;,&quot;12/2/2017&quot;,&quot;12/3/2017&quot;,&quot;12/4/2017&quot;,&quot;12/5/2017&quot;,&quot;12/6/2017&quot;,&quot;12/7/2017&quot;,&quot;12/8/2017&quot;,&quot;12/9/2017&quot;,&quot;12/10/2017&quot;,&quot;12/11/2017&quot;,&quot;12/12/2017&quot;,&quot;12/13/2017&quot;,&quot;12/14/2017&quot;,&quot;12/15/2017&quot;,&quot;12/16/2017&quot;,&quot;12/17/2017&quot;,&quot;12/18/2017&quot;,&quot;12/19/2017&quot;,&quot;12/20/2017&quot;,&quot;12/21/2017&quot;,&quot;12/22/2017&quot;,&quot;12/23/2017&quot;]" />
+                                        <input type="hidden" id="SelectedDate" />
+                                        <input type="hidden" id="SelectedTime" />
                                     </div>
                                 </div>
                             </div>
@@ -260,11 +303,11 @@
                                                             <option value="det3">Tide</option>
                                                         </select>
                                                     </div>
+                                                    <div class="next-section text-right">
+                                                        <button type="button" class="btn btn-next" type="submit" value="Next">Next</button>
+                                                    </div>
                                                 </form>
                                             </div>
-                                        </div>
-                                        <div class="next-section text-right">
-                                            <button type="button" class="btn btn-next">Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -363,7 +406,7 @@
                                             </div>
                                         </div>
                                         <div class="next-section text-right">
-                                            <button type="button" class="btn btn-next">Finish</button>
+                                            <button type="button" class="btn btn-next" type="submit" value="Next">Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1534,13 +1577,13 @@
     <!-- End Item Information, Add and Quantity Modal -->
 
     <!-- Start: Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/aos.js"></script>
+    <script src="js/vendor/select2.full.min.js"></script>
+    <script src="js/vendor/jquery.prettyPhoto.js"></script>
+    <script src="js/vendor/aos.js"></script>
     <script src="js/script.js"></script>
     <!-- End: Scripts -->
 

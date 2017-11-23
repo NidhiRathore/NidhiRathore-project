@@ -53,8 +53,6 @@ $(".overlay").click(function() {
  ***********************************/
 
 $(function() {
-    $( "#pick-up-datepicker" ).datepicker();
-    $( "#drop-datepicker" ).datepicker();
     $('[data-toggle="popover"]').popover({ trigger: "hover" });
 });
 
@@ -99,4 +97,198 @@ $('body').on('click', '.pricing-list-container > .close-btn > .fa-close', functi
     event.preventDefault();
     /* Act on the event */
     $(this).parents('.pricing-list-container').slideUp('slow');
+});
+
+function GetListTime(date)
+{
+    $('#ajaxTimeLoader').fadeIn();
+    $("ul.list-time").empty();
+    $.ajax({
+        url: '/order/GetListPickupTime',
+        data: { date: date },
+        success: function(data){
+            var arr_json = JSON.parse(data);
+            $.each(arr_json, function (i, time) {
+                var timeItem = "<li index=\"" + i + "\">" + time + "</li>";
+                if (time == $('#selected_time').text()) {
+                    timeItem = "<li class=\"selected_time\" index=\"" + i + "\">" + time + "</li>";
+                }
+                $("ul.list-time").append(timeItem);
+            });
+            if ($('li.selected_time').length > 0) {
+                var currentIndex = parseInt($('li.selected_time').attr('index'));
+                if (currentIndex > 1) {
+                    var toIndex = parseInt($('li.selected_time').attr('index')) - 2;
+                    $('.list-time').scrollTo($('.list-time li[index=' + toIndex + ']'));
+                }
+
+            }
+            else {
+                $('#selected_time').text('- Select Time -');
+                $('#pickupTime').val('');
+            }
+            $('#ajaxTimeLoader').fadeOut();
+        },
+        cache: false
+    });
+}
+
+function ShowTimePicker(date, timePicker, stateActive)
+{
+    var pos = $(stateActive).position();
+    $(timePicker).show();
+    $(timePicker).find('.list-time').show();
+
+    $(timePicker).css({ left: pos.left - 100, top: pos.top + 48 });
+    // GetListTime(date);
+}
+$(function () {
+    var availableDates = JSON.parse($('#ListPickupDate').val());
+
+    var defaultDate = $('#SelectedDate').val();
+
+    $('#pick-up-datepicker').datepicker({
+        inline: true,
+        firstDay: 0,
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        defaultDate: defaultDate,
+        onSelect: function (date,inst) {
+            setTimeout(function() {
+                inst.dpDiv.find('a.ui-state-active').css('background-color','blue');
+            }, 1);
+            $(this).datepicker("refresh");
+            $('#pickupDate').val(date);
+            ShowTimePicker(date, $(this).find('.time-picker'), $(this).find('a.ui-state-active'));
+        },
+        beforeShowDay: function (d) {
+            var dmy = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+            if ($.inArray(dmy, availableDates) != -1) {
+                return [true, "available", ""];
+            } else {
+                return [false, "unavailable", ""];
+            }
+        }
+    });
+
+    $('#drop-datepicker').datepicker({
+        inline: true,
+        firstDay: 0,
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        defaultDate: defaultDate,
+        onSelect: function (date,inst) {
+            setTimeout(function() {
+                inst.dpDiv.find('a.ui-state-active').css('background-color','blue');
+            }, 1);
+            $(this).datepicker("refresh");
+            $('#dropDate').val(date);
+            ShowTimePicker(date, $(this).find('.time-picker'), $(this).find('a.ui-state-active'));
+        },
+        beforeShowDay: function (d) {
+            var dmy = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+            if ($.inArray(dmy, availableDates) != -1) {
+                return [true, "available", ""];
+            } else {
+                return [false, "unavailable", ""];
+            }
+        }
+    });
+
+    if (defaultDate.length > 0) {
+        var dtDefaultDate = new Date(defaultDate);
+        var dmy = (dtDefaultDate.getMonth() + 1) + "/" + dtDefaultDate.getDate() + "/" + dtDefaultDate.getFullYear();
+        if ($.inArray(dmy, availableDates) != -1) {
+            $('a.ui-state-active').css('background-image', 'url(/images/schedule-misc-dayhighlight.png)');
+            ShowTimePicker(defaultDate);
+            var selectedTime = $('#SelectedTime').val();
+            $('#selected_time').html(selectedTime);
+            $('#pickupDate').val(defaultDate);
+            $('#pickupTime').val(selectedTime);
+        } else {
+            $('#errorMessage').html('The pick up time has passed');
+        }
+    }
+    $(document).on('click', '.list-time>li', function () {
+        var time = $(this).text();
+        var dataId = $(this).parent('ul').data('id');
+        $(this).parent('ul').siblings('.selected-time-box').text(time);
+        // $('#selected_time').text(time);
+        $('#' + dataId).val(time);
+        $(this).parent('.list-time').hide();
+    });
+
+    $('.selected-time-box').click(function () {
+        if ($(this).siblings('.list-time').is(":visible") == false) {
+            // GetListTime($('#pickupDate').val());
+        }
+        $(this).siblings('.list-time').slideToggle();
+        return false;
+    });
+
+    $('#month').html($('.ui-datepicker-month').html().toUpperCase());
+    $('#prevMonth').click(function () {
+        $('.ui-datepicker-prev').trigger('click');
+        $('#month').html($('.ui-datepicker-month').html().toUpperCase());
+        if ($('a.ui-state-active').is(":visible") && $('#pickupDate').val().length > 0) {
+            $('a.ui-state-active').css('background-image', 'url(/images/schedule-misc-dayhighlight.png)');
+            ShowTimePicker($('#pickupDate').val());
+        }
+        else {
+            $('.time-picker').hide();
+        }
+    });
+    $('#nextMonth').click(function () {
+        $('.ui-datepicker-next').trigger('click');
+        $('#month').html($('.ui-datepicker-month').html().toUpperCase());
+        if ($('a.ui-state-active').is(":visible") && $('#pickupDate').val().length > 0) {
+            $('a.ui-state-active').css('background-image', 'url(/images/schedule-misc-dayhighlight.png)');
+            ShowTimePicker($('#pickupDate').val());
+        }
+        else
+        {
+            $('.time-picker').hide();
+        }
+    });
+
+    $("#pick-up-datepicker").clickOff(function () {
+        $(this).find('.list-time').hide();
+    });
+
+    $("#drop-datepicker").clickOff(function () {
+        $(this).find('.list-time').hide();
+    });
+});
+
+$.fn.clickOff = function(n, t) {
+    var i = !1,
+        r = this,
+        u = t || !0;
+    r.click(function() {
+        i = !0
+    });
+    $(document).click(function(t) {
+        i || n(r, t);
+        u;
+        i = !1
+    })
+};
+
+//RECO
+if ($('#reco_recurring').is(':checked')) {
+    $('#reco-type-list').show();
+}
+else {
+    $('#reco-type-list').hide();
+}
+$('label.reco').click(function () {
+    var value = $(this).find('input:radio').val();
+    if (value == 1) {
+        $('#reco-type-list').fadeIn();
+    }
+    else {
+        $('#reco-type-list').fadeOut();
+    }
 });
