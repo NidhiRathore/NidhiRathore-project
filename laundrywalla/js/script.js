@@ -75,29 +75,35 @@ $(function() {
   Pricing Table
   ***********************************/
 
-$('body').on('click', '.show-pricing-btn', function(event) {
+$('.show-pricing-btn').on('click', function(event) {
     event.preventDefault();
-    /* Act on the event */
-    $('.pricing-container').addClass('showed').slideDown('slow');
+    $('.pricing-container').slideDown('slow').addClass('showed');
 });
 
-$('body').on('click', '.pricing-container > .close-btn > .fa-close', function(event) {
+$('.pricing-container > .close-btn > .fa-close').on('click', function(event) {
     event.preventDefault();
-    /* Act on the event */
-    $(this).parents('.pricing-container').slideUp('slow');
+    $(this).parents('.pricing-container').slideUp('slow').removeClass('showed');
 });
 
-$('body').on('click', '.pricing-content .item', function(event) {
+/*$('.pricing-content .item').on('click', function(event) {
     event.preventDefault();
-    /* Act on the event */
-    $(this).find('.pricing-list-container').addClass('showed');
+    $(this).find('.pricing-list-container').addClass('showed').slideDown('fast');
 });
 
-$('body').on('click', '.pricing-list-container > .close-btn > .fa-close', function(event) {
+$('.pricing-list-container > .close-btn > .fa-close').on('click', function(event) {
     event.preventDefault();
-    /* Act on the event */
-    $(this).parents('.pricing-list-container').slideUp('slow');
-});
+    $(this).parents('.pricing-list-container').slideUp('fast');
+});*/
+
+function showPricing(self) {
+    var data_item = $(self).data('item');
+    $('#' + data_item).addClass('showed').fadeIn('fast');
+}
+
+function closePricing(self) {
+    var parent = $(self).parents('.pricing-list-container');
+    $(parent).removeClass('showed').fadeOut('fast');
+}
 
 function GetListTime(date)
 {
@@ -150,6 +156,7 @@ $(function () {
     $('#pick-up-datepicker').datepicker({
         inline: true,
         firstDay: 0,
+        minDate: 0,
         showOtherMonths: true,
         selectOtherMonths: true,
         dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -162,19 +169,20 @@ $(function () {
             $('#pickupDate').val(date);
             ShowTimePicker(date, $(this).find('.time-picker'), $(this).find('a.ui-state-active'));
         },
-        beforeShowDay: function (d) {
+        /*beforeShowDay: function (d) {
             var dmy = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
             if ($.inArray(dmy, availableDates) != -1) {
                 return [true, "available", ""];
             } else {
                 return [false, "unavailable", ""];
             }
-        }
+        }*/
     });
 
     $('#drop-datepicker').datepicker({
         inline: true,
         firstDay: 0,
+        minDate: 0,
         showOtherMonths: true,
         selectOtherMonths: true,
         dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -187,14 +195,14 @@ $(function () {
             $('#dropDate').val(date);
             ShowTimePicker(date, $(this).find('.time-picker'), $(this).find('a.ui-state-active'));
         },
-        beforeShowDay: function (d) {
+        /*beforeShowDay: function (d) {
             var dmy = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
             if ($.inArray(dmy, availableDates) != -1) {
                 return [true, "available", ""];
             } else {
                 return [false, "unavailable", ""];
             }
-        }
+        }*/
     });
 
     if (defaultDate.length > 0) {
@@ -229,7 +237,13 @@ $(function () {
     });
 
     $('#month').html($('.ui-datepicker-month').html().toUpperCase());
-    $('#prevMonth').click(function () {
+    $(document).on('click', '.ui-datepicker-prev', function () {
+        $('.time-picker').hide();
+    });
+    $(document).on('click', '.ui-datepicker-next', function () {
+        $('.time-picker').hide();
+    });
+    /*$('#prevMonth').click(function () {
         $('.ui-datepicker-prev').trigger('click');
         $('#month').html($('.ui-datepicker-month').html().toUpperCase());
         if ($('a.ui-state-active').is(":visible") && $('#pickupDate').val().length > 0) {
@@ -251,7 +265,7 @@ $(function () {
         {
             $('.time-picker').hide();
         }
-    });
+    });*/
 
     $("#pick-up-datepicker").clickOff(function () {
         $(this).find('.list-time').hide();

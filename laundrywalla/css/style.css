@@ -1519,7 +1519,6 @@ ul.list-time li:hover,
 ul.list-time li:focus {
     color: #00089D;
 }
-
 /*************************************
   Pricing Content CSS
 **************************************/
@@ -1597,19 +1596,28 @@ ul.list-time li:focus {
     display: none;
     transition: all ease-in 0.4s;
     background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, rgba(70, 174, 247, 0.95) 100%);
+}
+.pricing-list-container.showed {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 22;
 }
-.pricing-list-container.showed {
-    display: block;
+.pricing-list-container .close-btn {
+    padding: 2% 2% 0% 2%;
+}
+.pricing-list-container .close-btn i.fa {
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
 }
 .pricing-list-container .content-title {
     font-size: 34px;
     font-weight: 600;
     color: #f5f5f5;
+    text-align: center;
 }
 .pricing-list-container .content-title::after {
     content: "";
@@ -1623,6 +1631,7 @@ ul.list-time li:focus {
     font-size: 16px;
     margin-bottom: 20px;
     color: #f5f5f5;
+    text-align: center;
 }
 .pricing-list-table {
     width: 50%;
@@ -1740,21 +1749,114 @@ ul.list-time li:focus {
     background-image: none;
     text-shadow: none;
 }
+.ud-order-item {
+    padding: 15px 25px;
+    border: 2px solid #0081de;
+    font-size: 20px;
+    border-radius: 4px;
+    position: relative;
+    transition: all ease-in 0.4s;
+}
+.ud-order-item:hover {
+    cursor: pointer;
+    box-shadow: inset -1px -1px 2px 0px rgba(0, 145, 217, 0.7);
+}
+.ud-order-item:hover::after {
+    content: '\f054';
+    font: 14px 'FontAwesome';
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 16px;
+    color: #0091D9;
+}
+.ud-order-item-item {
+    width: 45%;
+}
+.ud-order-item-item + .ud-order-item-item {
+    margin-left: 15px;
+}
+.ud-order-item-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.ud-order-item-body {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.ud-order-item-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px;
+}
+.ud-order-name, .ud-order-status {
+    color: #00089D;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.ud-order-time {
+    font-size: 14px;
+}
+.ud-order-timing {
+    font-size: 16px;
+    color: #00089D;
+}
+.ud-order-address {
+    color: #00089D;
+    margin-bottom: 0px;
+}
+.ud-order-total {
+    color: #00089D;
+}
+.btn-cancel {
+    background-image: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: #d9534f;
+    font-size: 18px;
+    padding: 0;
+    transition: all ease-in 0.2s;
+}
+.btn-cancel:hover,
+.btn-cancel:focus {
+    background-image: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: #c9302c;
+    font-size: 18px;
+    padding: 0;
+}
 .ud-order {
-    padding: 30px 15px;
+    padding: 25px;
     border: 2px solid #0081de;
     color: #0091D9;
     font-size: 20px;
     border-radius: 4px;
     position: relative;
+    transition: all ease-in 0.4s;
 }
 .ud-order:hover {
     cursor: pointer;
     box-shadow: inset -1px -1px 2px 0px rgba(0, 145, 217, 0.7);
 }
-.ud-order::after {
+.ud-order:hover::after {
     content: '\f054';
-    font: 14px FontAwesome;
+    font: 14px 'FontAwesome';
     position: absolute;
     right: 20px;
     top: 0;
